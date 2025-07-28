@@ -17,6 +17,17 @@ import java.util.List;
 
 public class MyApplication extends AppCompatActivity {
 
+    private static MyApplication instance;
+    //购物车中的商品总数量
+    public int goodsCount;
+
+    public static MyApplication getInstance() {
+        if(instance == null){
+            instance =new MyApplication();
+        }
+        return instance;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

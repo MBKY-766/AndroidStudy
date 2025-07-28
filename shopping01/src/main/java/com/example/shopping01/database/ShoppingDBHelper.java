@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.shopping01.enity.CartInfo;
 import com.example.shopping01.enity.GoodsInfo;
 
 import java.util.ArrayList;
@@ -133,5 +134,89 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return list;
+    }
+
+    //添加商品到购物车
+    public void insertCartInfo(int id) {
+        //如果购物车中不存在该商品，添加一条信息
+        CartInfo cartInfo = queryCartInfoByBoodsId(id);
+        ContentValues values = new ContentValues();
+        values.put("goods_id", id);
+        if (cartInfo == null) {
+            values.put("count", 1);
+            WDB.insert(TABLE_CART_INFO, null, values);
+        } else {
+            //如果购物车中已经存在该商品，更新商品数量
+            values.put("id", cartInfo.id);
+            values.put("count", ++cartInfo.count);
+            WDB.update(TABLE_CART_INFO, values, "id=?", new String[]{String.valueOf(cartInfo.id)});
+
+        }
+
+
+    }
+
+    private CartInfo queryCartInfoByBoodsId(int id) {
+        Cursor cursor = RDB.query(TABLE_CART_INFO, null, "goods_id=?", new String[]{String.valueOf(id)}, null, null, null);
+        CartInfo info = null;
+
+        if (cursor.moveToNext()) {
+            info = new CartInfo();
+            info.id = cursor.getInt(0);
+            info.goodsId = cursor.getInt(1);
+            info.count = cursor.getInt(2);
+        }
+        return info;
+    }
+
+    //统计购物车商品的总数量
+    public int countCartInfo() {
+        int count = 0;
+        String sql = "select sum(count) from " + TABLE_CART_INFO;
+        Cursor cursor = RDB.rawQuery(sql, null);
+        if (cursor.moveToNext()){
+            count = cursor.getInt(0);
+        }
+        return count;
+    }
+
+    //查询购物车汇总给你所有的信息列表
+    public List<CartInfo> queryAllCartInfo() {
+        List<CartInfo> list = new ArrayList<>();
+        Cursor cursor = RDB.query(TABLE_CART_INFO, null, null, null, null, null, null);
+        while(cursor.moveToNext()){
+            CartInfo info = new CartInfo();
+            info.id=cursor.getInt(0);
+            info.goodsId = cursor.getInt(1);
+            info.count = cursor.getInt(2);
+            list.add(info);
+        }
+        return list;
+
+    }
+
+    //根据商品ID查询商品信息
+    public GoodsInfo queryGoodsInfoById(int goodsId) {
+        GoodsInfo info = null;
+        Cursor cursor = RDB.query(TABLE_GOODS_INFO, null, "id=?", new String[]{String.valueOf(goodsId)}, null, null, null);
+        if(cursor.moveToNext()){
+            info = new GoodsInfo();
+            info.id = cursor.getInt(0);
+            info.name = cursor.getString(1);
+            info.description = cursor.getString(2);
+            info.picturePath = cursor.getString(3);
+            info.price = cursor.getFloat(4);
+        }
+        return info;
+    }
+
+    // 根据商品ID删除购物车信息
+    public void deleteCartInfoByGoodsId(int goodsId) {
+        WDB.delete(TABLE_CART_INFO,"goods_id=?",new String[]{String.valueOf(goodsId)});
+
+    }
+    //删除所有购物车信息
+    public void deleteAllCartInfo(){
+        WDB.delete(TABLE_CART_INFO,"1=1",null);
     }
 }
