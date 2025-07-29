@@ -19,7 +19,7 @@ public class MyApplication extends AppCompatActivity {
 
     private static MyApplication instance;
     //购物车中的商品总数量
-    public int goodsCount;
+    public int goodsCount = 0;
 
     public static MyApplication getInstance() {
         if(instance == null){

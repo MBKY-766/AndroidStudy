@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingDBHelper extends SQLiteOpenHelper {
+    private static final String TAG = "ShoppingDBHelper";
     private static final String DB_NAME = "shopping.db";
     //商品信息表
     private static final String TABLE_GOODS_INFO = "goods_info";
@@ -25,6 +27,8 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
     private static ShoppingDBHelper helper = null;
     private SQLiteDatabase RDB = null;
     private SQLiteDatabase WDB = null;
+
+    private boolean flag = false;
 
 
     private ShoppingDBHelper(@Nullable Context context) {
@@ -41,6 +45,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //打开数据库的读连接
     public SQLiteDatabase openReadLink() {
+        Log.d(TAG,"openReadLink");
         if (RDB == null || RDB.isOpen()) {
             RDB = helper.getReadableDatabase();
         }
@@ -49,6 +54,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //打开数据库的写连接
     public SQLiteDatabase openWriteLink() {
+        Log.d(TAG,"openWriteLink");
         if (WDB == null || WDB.isOpen()) {
             WDB = helper.getWritableDatabase();
 
@@ -58,6 +64,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //关闭数据库连接
     public void closeLink() {
+        Log.d(TAG,"closeLink");
         if (RDB != null && RDB.isOpen()) {
             RDB.close();
             RDB = null;

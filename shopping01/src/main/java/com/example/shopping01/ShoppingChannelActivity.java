@@ -3,6 +3,7 @@ package com.example.shopping01;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,7 @@ import java.util.List;
 
 public class  ShoppingChannelActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String TAG = "ShoppingChannelActivity";
     //声明一个商品数据库的帮助器对象
     private ShoppingDBHelper dbHelper;
     private GridLayout channel_gl;
@@ -39,6 +41,7 @@ public class  ShoppingChannelActivity extends AppCompatActivity implements View.
         dbHelper = ShoppingDBHelper.getInstance(this);
         dbHelper.openWriteLink();
         dbHelper.openReadLink();
+        Log.d(TAG,"onCreate");
 
         //从数据库查询出商品信息，并展示
         showGoods();
@@ -108,6 +111,7 @@ public class  ShoppingChannelActivity extends AppCompatActivity implements View.
     @Override
     protected void onDestroy(){
         super.onDestroy();
+        Log.d(TAG,"onDestroy");
         dbHelper.closeLink();
     }
 

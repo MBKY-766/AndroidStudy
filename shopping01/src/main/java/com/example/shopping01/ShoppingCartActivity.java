@@ -119,7 +119,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             //给商品行添加点击事件，点击商品行跳转到商品详情页面
             view.setOnClickListener(v -> {
                 Intent intent = new Intent(ShoppingCartActivity.this, ShoppingDetailActivity.class);
-                intent.putExtra("goods_id",info.id);
+                intent.putExtra("goods_id",goods.id);
                 startActivity(intent);
             });
             //往购物车列表添加商品行
@@ -187,11 +187,11 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
             //跳转到手机商城
             //跟返回页面一样，可以结束当前页面，也可以跳转到手机商场页面
             //采用第二种
-//
-//            Intent intent = new Intent(this, ShoppingChannelActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//避免出现重复页面
-//            startActivity(intent);
-            finish();
+
+            Intent intent = new Intent(this, ShoppingChannelActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//避免出现重复页面
+            startActivity(intent);
+//            finish();
         } else if (v.getId() == R.id.btn_clear) {
             //清空购物车-删除所有商品信息
             //从购物车的数据库中删除商品
