@@ -35,6 +35,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
+
     //利用单例模式获取数据库帮助器的唯一实例
     public static ShoppingDBHelper getInstance(Context context) {
         if (helper == null) {
@@ -45,8 +46,8 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //打开数据库的读连接
     public SQLiteDatabase openReadLink() {
-        Log.d(TAG,"openReadLink");
-        if (RDB == null || RDB.isOpen()) {
+        Log.d(TAG, "openReadLink");
+        if (RDB == null || !RDB.isOpen()) {
             RDB = helper.getReadableDatabase();
         }
         return RDB;
@@ -54,8 +55,8 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //打开数据库的写连接
     public SQLiteDatabase openWriteLink() {
-        Log.d(TAG,"openWriteLink");
-        if (WDB == null || WDB.isOpen()) {
+        Log.d(TAG, "openWriteLink");
+        if (WDB == null || !WDB.isOpen()) {
             WDB = helper.getWritableDatabase();
 
         }
@@ -64,7 +65,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //关闭数据库连接
     public void closeLink() {
-        Log.d(TAG,"closeLink");
+        Log.d(TAG, "closeLink");
         if (RDB != null && RDB.isOpen()) {
             RDB.close();
             RDB = null;
@@ -181,7 +182,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
         int count = 0;
         String sql = "select sum(count) from " + TABLE_CART_INFO;
         Cursor cursor = RDB.rawQuery(sql, null);
-        if (cursor.moveToNext()){
+        if (cursor.moveToNext()) {
             count = cursor.getInt(0);
         }
         return count;
@@ -191,9 +192,9 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
     public List<CartInfo> queryAllCartInfo() {
         List<CartInfo> list = new ArrayList<>();
         Cursor cursor = RDB.query(TABLE_CART_INFO, null, null, null, null, null, null);
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             CartInfo info = new CartInfo();
-            info.id=cursor.getInt(0);
+            info.id = cursor.getInt(0);
             info.goodsId = cursor.getInt(1);
             info.count = cursor.getInt(2);
             list.add(info);
@@ -206,7 +207,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
     public GoodsInfo queryGoodsInfoById(int goodsId) {
         GoodsInfo info = null;
         Cursor cursor = RDB.query(TABLE_GOODS_INFO, null, "id=?", new String[]{String.valueOf(goodsId)}, null, null, null);
-        if(cursor.moveToNext()){
+        if (cursor.moveToNext()) {
             info = new GoodsInfo();
             info.id = cursor.getInt(0);
             info.name = cursor.getString(1);
@@ -219,11 +220,12 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     // 根据商品ID删除购物车信息
     public void deleteCartInfoByGoodsId(int goodsId) {
-        WDB.delete(TABLE_CART_INFO,"goods_id=?",new String[]{String.valueOf(goodsId)});
+        WDB.delete(TABLE_CART_INFO, "goods_id=?", new String[]{String.valueOf(goodsId)});
 
     }
+
     //删除所有购物车信息
-    public void deleteAllCartInfo(){
-        WDB.delete(TABLE_CART_INFO,"1=1",null);
+    public void deleteAllCartInfo() {
+        WDB.delete(TABLE_CART_INFO, "1=1", null);
     }
 }

@@ -32,15 +32,16 @@ public class  ShoppingChannelActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_channel);
+        dbHelper = ShoppingDBHelper.getInstance(this);
+        dbHelper.openWriteLink();
+        dbHelper.openReadLink();
         TextView title_tv = findViewById(R.id.title_tv);
         title_tv.setText("手机商城");
         count_tv = findViewById(R.id.count_tv);
         channel_gl = findViewById(R.id.gl_channel);
         findViewById(R.id.back_iv).setOnClickListener(this);
         findViewById(R.id.cart_iv).setOnClickListener(this);
-        dbHelper = ShoppingDBHelper.getInstance(this);
-        dbHelper.openWriteLink();
-        dbHelper.openReadLink();
+
         Log.d(TAG,"onCreate");
 
         //从数据库查询出商品信息，并展示
