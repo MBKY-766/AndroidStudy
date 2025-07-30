@@ -46,7 +46,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //打开数据库的读连接
     public SQLiteDatabase openReadLink() {
-        Log.d(TAG, "openReadLink");
+//        Log.d(TAG, "openReadLink");
         if (RDB == null || !RDB.isOpen()) {
             RDB = helper.getReadableDatabase();
         }
@@ -55,7 +55,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //打开数据库的写连接
     public SQLiteDatabase openWriteLink() {
-        Log.d(TAG, "openWriteLink");
+//        Log.d(TAG, "openWriteLink");
         if (WDB == null || !WDB.isOpen()) {
             WDB = helper.getWritableDatabase();
 
@@ -65,7 +65,7 @@ public class ShoppingDBHelper extends SQLiteOpenHelper {
 
     //关闭数据库连接
     public void closeLink() {
-        Log.d(TAG, "closeLink");
+//        Log.d(TAG, "closeLink");
         if (RDB != null && RDB.isOpen()) {
             RDB.close();
             RDB = null;

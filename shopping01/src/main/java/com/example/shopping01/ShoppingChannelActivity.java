@@ -42,7 +42,7 @@ public class  ShoppingChannelActivity extends AppCompatActivity implements View.
         findViewById(R.id.back_iv).setOnClickListener(this);
         findViewById(R.id.cart_iv).setOnClickListener(this);
 
-        Log.d(TAG,"onCreate");
+//        Log.d(TAG,"onCreate");
 
         //从数据库查询出商品信息，并展示
         showGoods();
@@ -112,7 +112,7 @@ public class  ShoppingChannelActivity extends AppCompatActivity implements View.
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        Log.d(TAG,"onDestroy");
+//        Log.d(TAG,"onDestroy");
         dbHelper.closeLink();
     }
 
