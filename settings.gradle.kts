@@ -23,3 +23,4 @@ rootProject.name = "AndroidStudy"
 include(":app")
 include(":shopping01")
 include(":permission")
+include(":sms")

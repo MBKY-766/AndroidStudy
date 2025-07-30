@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/permission" />
             <option value="$PROJECT_DIR$/shopping01" />
+            <option value="$PROJECT_DIR$/sms" />
           </set>
         </option>
       </GradleProjectSettings>
