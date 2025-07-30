@@ -21,6 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidStudy"
 include(":app")
-include(":shopping")
-project(":shopping").projectDir = File(rootDir, "shopping/")
 include(":shopping01")
+include(":permission")
