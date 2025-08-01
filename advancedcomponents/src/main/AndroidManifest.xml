@@ -9,8 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name=".ListFocusActivity"-->
+<!--            android:name=".ViewPagerActivity"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".GridViewActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".ListFocusActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name=".ListViewActivity" -->
         <!-- android:exported="false" /> -->
@@ -24,7 +30,7 @@
         <!-- android:name=".SpinnerDropDownActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".ListFocusActivity"
+            android:name=".ViewPagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
