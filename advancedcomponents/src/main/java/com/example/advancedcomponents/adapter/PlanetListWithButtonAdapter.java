@@ -5,19 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.advancedcomponents.R;
 import com.example.advancedcomponents.bean.Planet;
+import com.example.advancedcomponents.util.ToastUtil;
 
 import java.util.List;
 
-public class PlanetBaseAdapter extends BaseAdapter {
+public class PlanetListWithButtonAdapter extends BaseAdapter {
     private Context mContext;
     private List<Planet> mPlanetList;
 
-    public PlanetBaseAdapter(Context mContext, List<Planet> mPlanetList) {
+    public PlanetListWithButtonAdapter(Context mContext, List<Planet> mPlanetList) {
         this.mContext = mContext;
         this.mPlanetList = mPlanetList;
     }
@@ -43,11 +45,12 @@ public class PlanetBaseAdapter extends BaseAdapter {
 
         if (convertView == null) {
             //根据布局文件item_list.xml生成转换视图对象
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_list, null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_list_with_button, null);
             holder = new ViewHolder();
             holder.iv_icon = convertView.findViewById(R.id.iv_icon);
             holder.tv_name = convertView.findViewById(R.id.tv_name);
             holder.tv_desc = convertView.findViewById(R.id.tv_desc);
+            holder.btn_oper = convertView.findViewById(R.id.btn_oper);
             //将视图持有者保存到转换视图当中
             convertView.setTag(holder);
         } else {
@@ -59,7 +62,9 @@ public class PlanetBaseAdapter extends BaseAdapter {
         holder.iv_icon.setImageResource(planet.image);
         holder.tv_name.setText(planet.name);
         holder.tv_desc.setText(planet.desc);
-
+        holder.btn_oper.setOnClickListener(v -> {
+            ToastUtil.show(mContext,"按钮被点击了,"+planet.name);
+        });
         return convertView;
     }
 
@@ -67,5 +72,6 @@ public class PlanetBaseAdapter extends BaseAdapter {
         public ImageView iv_icon;
         public TextView tv_name;
         public TextView tv_desc;
+        public Button btn_oper;
     }
 }
