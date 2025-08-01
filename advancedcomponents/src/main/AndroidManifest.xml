@@ -9,13 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name=".SpinnerIconActivity"-->
+<!--            android:name=".BaseAdapterActivity"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".SpinnerIconActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name=".SpinnerDropDownActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".SpinnerIconActivity"
+            android:name=".BaseAdapterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
