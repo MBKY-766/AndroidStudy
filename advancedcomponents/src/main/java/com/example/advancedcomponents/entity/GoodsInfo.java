@@ -21,7 +21,7 @@ public class GoodsInfo {
             "Apple iPhone16 ProMax 1TB 沙漠色",
             "HUAWEI Mate70 512GB 风信紫",
             "OPPO Find X8 Ultra 256GB 月光白",
-            "xiaomi 15 Ultra 1TB 樱花粉"
+            "xiaomi 15 Ultra 1TB 松柏绿"
     };
     //手机价格数组
     public static float[] priceArr = {

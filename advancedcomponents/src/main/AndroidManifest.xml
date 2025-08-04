@@ -9,8 +9,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name=".LaunchSimpleActivity"-->
+<!--            android:name=".LaunchImproveActivity"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".FragmentDynamicActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".FragmentStaticActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LaunchSimpleActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name=".PageTabActivity" -->
         <!-- android:exported="false" /> -->
@@ -36,7 +45,7 @@
         <!-- android:name=".SpinnerDropDownActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".LaunchSimpleActivity"
+            android:name=".FragmentDynamicActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

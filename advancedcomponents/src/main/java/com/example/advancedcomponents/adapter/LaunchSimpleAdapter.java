@@ -37,6 +37,7 @@ public class LaunchSimpleAdapter extends PagerAdapter {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT
                 ));
+                radioButton.setClickable(false);
                 radioButton.setPadding(10, 10, 10, 10);
                 rg_indicate.addView(radioButton);
             }
