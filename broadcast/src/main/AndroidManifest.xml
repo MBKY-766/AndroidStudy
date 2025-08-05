@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 开启系统振动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -8,11 +10,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-<!--        <activity-->
-<!--            android:name=".BroadOrderActivity"-->
-<!--            android:exported="false" />-->
         <activity
-            android:name=".BroadOrderActivity"
+            android:name=".SystemMinuteActivity"
+            android:exported="false" />
+
+        <receiver
+            android:name=".receiver.ShockReceiver"
+            android:exported="true"> <!-- 跨应用传递 -->
+            <intent-filter>
+                <action android:name="com.example.broadcast.shock" />
+            </intent-filter>
+        </receiver> <!-- <activity -->
+        <!-- android:name=".BroadStaticActivity" -->
+        <!-- android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt; -->
+        <!-- android:name=".BroadOrderActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".BroadStaticActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
