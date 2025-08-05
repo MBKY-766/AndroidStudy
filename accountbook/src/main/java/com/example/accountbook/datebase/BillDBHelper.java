@@ -96,21 +96,21 @@ public class BillDBHelper extends SQLiteOpenHelper {
     }
 
     //保存一条订单记录
-    public long save(BillInfo bill) {
+    public long save(BillInfo bill){
         ContentValues values = new ContentValues();
-        values.put("date", bill.date);
-        values.put("type", bill.type);
-        values.put("amount", bill.amount);
-        values.put("remark", bill.remark);
-        return WDB.insert(TABLE_BILLS_INFO, null, values);
+        values.put("date",bill.date);
+        values.put("type",bill.type);
+        values.put("amount",bill.amount);
+        values.put("remark",bill.remark);
+        return WDB.insert(TABLE_BILLS_INFO,null,values);
     }
 
-    public List<BillInfo> queryByMonth(String yearMonth) {
+    public List<BillInfo> queryByMonth(String yearMonth){
         List<BillInfo> list = new ArrayList<>();
 
         String sql = "SELECT * FROM " + TABLE_BILLS_INFO + " WHERE date LIKE '" + yearMonth + "%'";
-        Cursor cursor = RDB.rawQuery(sql, null);
-        while (cursor.moveToNext()) {
+        Cursor cursor = RDB.rawQuery(sql,null);
+        while (cursor.moveToNext()){
             BillInfo bill = new BillInfo();
             bill.id = cursor.getInt(0);
             bill.date = cursor.getString(1);
@@ -121,6 +121,7 @@ public class BillDBHelper extends SQLiteOpenHelper {
         }
         return list;
     }
+
 
 
 }
