@@ -10,23 +10,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-<!--        <activity-->
-<!--            android:name=".SystemMinuteActivity"-->
-<!--            android:exported="false" />-->
-
-        <receiver
-            android:name=".receiver.ShockReceiver"
-            android:exported="true"> <!-- 跨应用传递 -->
-            <intent-filter>
-                <action android:name="com.example.broadcast.shock" />
-            </intent-filter>
-        </receiver> <!-- <activity -->
+        <activity
+            android:name=".LifeCycleTestActivity"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".AlarmActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".SystemNetworkActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".SystemMinuteActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <receiver -->
+        <!-- android:name=".receiver.ShockReceiver" -->
+        <!-- android:exported="true"> &lt;!&ndash; 跨应用传递 &ndash;&gt; -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.example.broadcast.shock" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name=".BroadStaticActivity" -->
         <!-- android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name=".BroadOrderActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".SystemMinuteActivity"
+            android:name=".AlarmActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
