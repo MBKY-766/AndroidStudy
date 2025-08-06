@@ -11,8 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name=".ReturnDesktopActivity"-->
+<!--            android:name=".MyAlarmActivity"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".ReturnDesktopActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name=".ChangeDirectionActivity" -->
         <!-- android:exported="false" /> -->
@@ -39,11 +42,11 @@
         <!-- android:name=".BroadOrderActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".ReturnDesktopActivity"
+            android:name=".MyAlarmActivity"
             android:configChanges="orientation|screenLayout|screenSize"
             android:exported="true"
-            android:supportsPictureInPicture="true"><!--支持画中画模式-->
-            <!--配置变更的豁免-不会重启Activity 默认竖屏 不能更改屏幕方向🍚-->
+            android:supportsPictureInPicture="true"> <!-- 支持画中画模式 -->
+            <!-- 配置变更的豁免-不会重启Activity 默认竖屏 不能更改屏幕方向🍚 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
