@@ -11,11 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name=".ChangeDirectionActivity"-->
+<!--            android:name=".ReturnDesktopActivity"-->
 <!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".LifeCycleTestActivity"-->
-<!--            android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt;-->
+        <!-- <activity -->
+        <!-- android:name=".ChangeDirectionActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LifeCycleTestActivity" -->
+        <!-- android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name=".AlarmActivity" -->
         <!-- android:exported="false" /> -->
         <!-- <activity -->
@@ -36,11 +39,11 @@
         <!-- android:name=".BroadOrderActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".ChangeDirectionActivity"
-            android:exported="true"
+            android:name=".ReturnDesktopActivity"
             android:configChanges="orientation|screenLayout|screenSize"
-            android:screenOrientation="portrait"><!--配置变更的豁免-不会重启Activity
-            默认竖屏 不能更改屏幕方向🍚-->
+            android:exported="true"
+            android:supportsPictureInPicture="true"><!--支持画中画模式-->
+            <!--配置变更的豁免-不会重启Activity 默认竖屏 不能更改屏幕方向🍚-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
