@@ -10,10 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-        <activity
-            android:name=".LifeCycleTestActivity"
-            android:exported="false" />
-        <!-- <activity -->
+<!--        <activity-->
+<!--            android:name=".ChangeDirectionActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".LifeCycleTestActivity"-->
+<!--            android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt;-->
         <!-- android:name=".AlarmActivity" -->
         <!-- android:exported="false" /> -->
         <!-- <activity -->
@@ -34,8 +36,11 @@
         <!-- android:name=".BroadOrderActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".AlarmActivity"
-            android:exported="true">
+            android:name=".ChangeDirectionActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenLayout|screenSize"
+            android:screenOrientation="portrait"><!--配置变更的豁免-不会重启Activity
+            默认竖屏 不能更改屏幕方向🍚-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
