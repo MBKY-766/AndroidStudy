@@ -3,13 +3,15 @@ package com.example.firstlineofcode
 fun main() {
     println("Hello Kotlin!")
     //面向对象编程
+    val cellphone = Cellphone("iPhone", 8999.0)
+    println(cellphone)
 //    val p = Person()
 //    p.name = "bgb"
 //    p.age = 20
 //    p.eat()
-    val s = Student("2022",2,"jack",20);
-    println(s.toString())
-    doStudy(s)
+//    val s = Student("2022",2,"jack",20);
+//    println(s.toString())
+//    doStudy(s)
 //    println(s.toString())
 //    cycle()
     //var val
@@ -21,7 +23,8 @@ fun main() {
 //    println(largerNumber);
 
 }
-fun doStudy(study: Study){
+
+fun doStudy(study: Study) {
     study.readBooks()
     study.doHomeWork()
 }

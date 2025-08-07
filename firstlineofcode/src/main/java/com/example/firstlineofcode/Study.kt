@@ -2,5 +2,9 @@ package com.example.firstlineofcode
 
 interface Study {
     fun readBooks()
-    fun doHomeWork()
+
+    //接口的默认实现
+    fun doHomeWork(){
+        println("doHomeWork default implementation.")
+    }
 }
