@@ -3,8 +3,20 @@ package com.example.firstlineofcode
 fun main() {
     println("Hello Kotlin!")
     //面向对象编程
-    val cellphone = Cellphone("iPhone", 8999.0)
-    println(cellphone)
+    //可变几何
+    val list = mutableListOf("Apple", "Banana", "Orange", "Pear", "Grape")
+    list.add("watermelon")
+    for (fruit in list) {
+        println(fruit)
+    }
+    //不可变集合
+    /*val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")
+    for(i in list){
+        println(i)
+    }*/
+//    Singleton.singletonTest()
+//    val cellphone = Cellphone("iPhone", 8999.0)
+//    println(cellphone)
 //    val p = Person()
 //    p.name = "bgb"
 //    p.age = 20
