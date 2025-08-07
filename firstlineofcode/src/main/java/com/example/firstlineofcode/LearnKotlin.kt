@@ -3,12 +3,33 @@ package com.example.firstlineofcode
 fun main() {
     println("Hello Kotlin!")
     //面向对象编程
-    //可变几何
+
+    //let
+//    val stu = Student("2222", 2, "tom", 14)
+//    doStudy(stu)
+//    Thread { println("Thread is running.") }.start()
+
+//    val list = mutableListOf("Apple", "Banana", "Orange", "Pear", "Grape")
+    //lambda表达式简化
+    /*val maxLengthFruit = list.maxBy { it.length }
+    println(maxLengthFruit)*/
+    /*
+    val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape", "Watermelon")
+    val lambda = { fruit: String -> fruit.length }
+    val maxLengthFruit = list.maxBy(lambda)
+    */
+    //map集合
+    /*val map = mutableMapOf("Apple" to 1, "Banana" to 2, "Orange" to 3)
+    for ((fruit, id) in map) {
+        println("名称：$fruit, 序号：$id")
+    }*/
+    //可变集合
+    /*val set = mutableSetOf("Apple", "Banana", "Orange", "Pear", "Grape")
     val list = mutableListOf("Apple", "Banana", "Orange", "Pear", "Grape")
     list.add("watermelon")
     for (fruit in list) {
         println(fruit)
-    }
+    }*/
     //不可变集合
     /*val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")
     for(i in list){
@@ -36,9 +57,13 @@ fun main() {
 
 }
 
-fun doStudy(study: Study) {
-    study.readBooks()
-    study.doHomeWork()
+//.?:非空检查  类型？:该变量可为空(null) name:String? name可为空值
+fun doStudy(study: Study?) {
+    //let:是个函数，可将原始调用对象作为参数传递到Lambda表达式中
+    study?.let {
+        it.readBooks()
+        it.doHomeWork()
+    }
 }
 
 
