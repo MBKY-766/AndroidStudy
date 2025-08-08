@@ -1,5 +1,6 @@
 package com.example.firstlineofcode
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -18,7 +19,11 @@ class SecondActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.back -> finish()
+            R.id.back -> {
+                val intent = Intent()
+                intent.putExtra("data_return","data of secondActivity")
+                setResult(RESULT_OK,intent)
+                finish()}
             R.id.show_result->{
                 val data = intent.getStringExtra("extra_data")
                 ToastUtil.show(this,data)

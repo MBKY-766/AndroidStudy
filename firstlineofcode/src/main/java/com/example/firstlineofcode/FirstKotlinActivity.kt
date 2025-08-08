@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.net.toUri
+import com.example.firstlineofcode.util.ToastUtil
 
 class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,8 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.open_browser).setOnClickListener(this)
         findViewById<Button>(R.id.call).setOnClickListener(this)
         findViewById<Button>(R.id.jump_with_data).setOnClickListener(this)
+        findViewById<Button>(R.id.jump_return_data).setOnClickListener(this)
+
 
     }
 
@@ -77,10 +80,27 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
                 intent.data = "tel:100000".toUri()
                 startActivity(intent)
             }
-            R.id.jump_with_data->{
+
+            R.id.jump_with_data -> {
                 val intent = Intent(this, SecondActivity::class.java)
-                intent.putExtra("extra_data","Hello")
+                intent.putExtra("extra_data", "Hello")
                 startActivity(intent)
+            }
+
+            R.id.jump_return_data -> {
+                val intent = Intent(this, SecondActivity::class.java)
+                startActivityForResult(intent, 1)
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        //requestCode:状态码-用于确定数据来源
+        when (requestCode) {
+            1 -> if (resultCode == RESULT_OK) {
+                val returnedData = data?.getStringExtra("data_return")
+                ToastUtil.show(this,returnedData)
             }
         }
     }
