@@ -1,6 +1,7 @@
 package com.example.firstlineofcode
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.net.toUri
 
 class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +26,8 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
         btnJump.setOnClickListener(this)
         val implicitJump = findViewById<Button>(R.id.implicit_jump)
         implicitJump.setOnClickListener(this)
+        findViewById<Button>(R.id.open_browser).setOnClickListener(this)
+
 
     }
 
@@ -49,9 +53,16 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
 
-            R.id.implicit_jump ->{
+            R.id.implicit_jump -> {
                 val intent = Intent("com.example.firstlineofcode.ACTION_START")
                 intent.addCategory("com.example.firstlineofcode.MY_CATEGORY")
+                startActivity(intent)
+
+            }
+
+            R.id.open_browser -> {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = "https://www.baidu.com".toUri()
                 startActivity(intent)
 
             }

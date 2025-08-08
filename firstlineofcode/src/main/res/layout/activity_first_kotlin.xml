@@ -25,5 +25,12 @@
         android:layout_height="wrap_content"
         android:text="implicitJump"
         android:gravity="center"/>
+    <Button
+        android:id="@+id/open_browser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click me to open browser!"
+        android:gravity="center"/>
+
 
 </LinearLayout>
