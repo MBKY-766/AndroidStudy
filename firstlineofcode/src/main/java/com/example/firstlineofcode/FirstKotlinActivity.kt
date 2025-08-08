@@ -28,6 +28,7 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
         implicitJump.setOnClickListener(this)
         findViewById<Button>(R.id.open_browser).setOnClickListener(this)
         findViewById<Button>(R.id.call).setOnClickListener(this)
+        findViewById<Button>(R.id.jump_with_data).setOnClickListener(this)
 
     }
 
@@ -74,6 +75,11 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
                 //拨打电话
                 val intent = Intent(Intent.ACTION_DIAL)
                 intent.data = "tel:100000".toUri()
+                startActivity(intent)
+            }
+            R.id.jump_with_data->{
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("extra_data","Hello")
                 startActivity(intent)
             }
         }

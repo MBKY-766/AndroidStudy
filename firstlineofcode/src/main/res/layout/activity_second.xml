@@ -12,6 +12,12 @@
         android:layout_height="wrap_content"
         android:text="Please click me to back! "
         android:gravity="center"/>
+    <Button
+        android:id="@+id/show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please click me to show result! "
+        android:gravity="center"/>
 
 
 </LinearLayout>
