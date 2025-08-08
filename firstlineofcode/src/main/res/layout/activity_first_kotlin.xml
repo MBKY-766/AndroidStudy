@@ -6,14 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".FirstKotlinActivity">
+    android:gravity="center">
     <Button
         android:id="@+id/btn_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please click me!"
         android:gravity="center"/>
-
+    <Button
+        android:id="@+id/jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="jump"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/implicit_jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="implicitJump"
+        android:gravity="center"/>
 
 </LinearLayout>

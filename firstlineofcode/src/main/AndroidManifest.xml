@@ -8,9 +8,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-<!--        <activity-->
-<!--            android:name=".FirstKotlinActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.example.firstlineofcode.ACTION_START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.example.firstlineofcode.MY_CATEGORY"/>
+            </intent-filter>
+        </activity>
+        <!-- <activity -->
+        <!-- android:name=".FirstKotlinActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".FirstKotlinActivity"
             android:exported="true">
