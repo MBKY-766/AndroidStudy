@@ -27,7 +27,7 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
         val implicitJump = findViewById<Button>(R.id.implicit_jump)
         implicitJump.setOnClickListener(this)
         findViewById<Button>(R.id.open_browser).setOnClickListener(this)
-
+        findViewById<Button>(R.id.call).setOnClickListener(this)
 
     }
 
@@ -49,11 +49,13 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.jump -> {
+                //显式意图跳转
                 val intent = Intent(this, SecondActivity::class.java)
                 startActivity(intent)
             }
 
             R.id.implicit_jump -> {
+                //隐式意图跳转
                 val intent = Intent("com.example.firstlineofcode.ACTION_START")
                 intent.addCategory("com.example.firstlineofcode.MY_CATEGORY")
                 startActivity(intent)
@@ -61,10 +63,18 @@ class FirstKotlinActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.open_browser -> {
+                //开启浏览器
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = "https://www.baidu.com".toUri()
                 startActivity(intent)
 
+            }
+
+            R.id.call -> {
+                //拨打电话
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = "tel:100000".toUri()
+                startActivity(intent)
             }
         }
     }

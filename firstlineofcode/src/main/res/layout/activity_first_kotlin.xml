@@ -31,6 +31,12 @@
         android:layout_height="wrap_content"
         android:text="Click me to open browser!"
         android:gravity="center"/>
+    <Button
+        android:id="@+id/call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click me to call!"
+        android:gravity="center"/>
 
 
 </LinearLayout>
