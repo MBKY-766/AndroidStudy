@@ -4,12 +4,12 @@ fun main() {
     println("Hello Kotlin!")
     //面向对象编程
     //apply函数-无法指定返回值，返回调用者本身
-    val result = StringBuilder().apply{
+    /*val result = StringBuilder().apply{
         append("start with eating \n")
         append("eat banana\n")
         append("eat apple")
     }
-    println(result.toString())
+    println(result.toString())*/
     //run函数-和with相似，只不过不能直接调用，要在，某个对象的基础上调用
 
     /*val result = StringBuilder().run{
