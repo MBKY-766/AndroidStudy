@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name=".UICustomViewActivity"-->
+<!--            android:name=".UIBestPractice"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".UICustomViewActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name=".TestViewBindingActivity" -->
         <!-- android:exported="false" /> -->
@@ -30,7 +33,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".MainActivity"
+            android:name=".UIBestPractice"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
