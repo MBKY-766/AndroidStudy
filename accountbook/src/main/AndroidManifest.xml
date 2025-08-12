@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".BillAddActivity"
             android:exported="false" />
         <activity
