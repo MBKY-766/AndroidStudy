@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-<!--        <activity-->
-<!--            android:name="FragmentTest.NewsContentActivity"-->
-<!--            android:exported="false" />-->
+        <receiver
+            android:name="BroadcastTest.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+
+        </receiver>
+        <!-- <activity -->
+        <!-- android:name="BroadcastTest.BroadcastActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name="FragmentTest.NewsContentActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name="FragmentTest.FragmentBestPracice"
             android:exported="false" /> <!-- <activity -->
@@ -41,7 +54,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="FragmentTest.NewsContentActivity"
+            android:name="BroadcastTest.BroadcastActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
