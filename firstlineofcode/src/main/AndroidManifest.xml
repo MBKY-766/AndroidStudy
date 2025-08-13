@@ -10,8 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name="FragmentTest.MainActivity"-->
+<!--            android:name="FragmentTest.NewsContentActivity"-->
 <!--            android:exported="false" />-->
+        <activity
+            android:name="FragmentTest.FragmentBestPracice"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name="FragmentTest.MainActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name=".UIBestPractice" -->
         <!-- android:exported="false" /> -->
@@ -36,7 +41,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="FragmentTest.MainActivity"
+            android:name="FragmentTest.NewsContentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
