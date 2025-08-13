@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/leftFrag"
+        android:name="FragmentTest.LeftFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    <fragment
+        android:id="@+id/rightFrag"
+        android:name="FragmentTest.RightFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3" />
+    <!--程序运行在屏幕宽度大于等于600 dp的设备上时，会加载layout- sw600dp/activity_main布局，
+    当程序运行在屏幕宽度小于600 dp的设备上时，则仍然加载 默认的layout/activity_main布局。-->
+</LinearLayout>
