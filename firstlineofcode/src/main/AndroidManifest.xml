@@ -11,23 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
         <receiver
-            android:name="BroadcastTest.BootCompleteReceiver"
+            android:name="BroadcastTest.receiver.MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.example.broadcasttest.MY_BROADCAST"/>
             </intent-filter>
-
         </receiver>
+<!--        <receiver-->
+<!--            android:name="BroadcastTest.BootCompleteReceiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+
+<!--        </receiver>-->
         <!-- <activity -->
         <!-- android:name="BroadcastTest.BroadcastActivity" -->
         <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name="FragmentTest.NewsContentActivity" -->
         <!-- android:exported="false" /> -->
-        <activity
-            android:name="FragmentTest.FragmentBestPracice"
-            android:exported="false" /> <!-- <activity -->
+<!--        <activity-->
+<!--            android:name="FragmentTest.FragmentBestPracice"-->
+<!--            android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt;-->
         <!-- android:name="FragmentTest.MainActivity" -->
         <!-- android:exported="false" /> -->
         <!-- <activity -->
@@ -39,18 +47,18 @@
         <!-- <activity -->
         <!-- android:name=".TestViewBindingActivity" -->
         <!-- android:exported="false" /> -->
-        <activity
-            android:name=".SecondActivity"
-            android:exported="true">
-            <intent-filter tools:ignore="AppLinkUrlError">
-                <action android:name="com.example.firstlineofcode.ACTION_START" />
+<!--        <activity-->
+<!--            android:name=".SecondActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter tools:ignore="AppLinkUrlError">-->
+<!--                <action android:name="com.example.firstlineofcode.ACTION_START" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.example.firstlineofcode.MY_CATEGORY" />
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="com.example.firstlineofcode.MY_CATEGORY" />-->
 
-                <data android:scheme="https" />
-            </intent-filter>
-        </activity> <!-- <activity -->
+<!--                <data android:scheme="https" />-->
+<!--            </intent-filter>-->
+<!--        </activity> &lt;!&ndash; <activity &ndash;&gt;-->
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
