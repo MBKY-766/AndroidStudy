@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun load(): String {
         val content = StringBuilder()
         try {
-            val input = openFileInput("data")
+            val input = openFileInput("data")//得到FileInputStream对象
             val reader = BufferedReader(InputStreamReader(input))
             reader.use {
                 reader.forEachLine {
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
         private fun save(inputText: String) {
             try {
-                val output = openFileOutput("data", Context.MODE_PRIVATE)
+                val output = openFileOutput("data", Context.MODE_PRIVATE)//得到FileOutputStream对象
                 val writer = BufferedWriter(OutputStreamWriter(output))
                 writer.use {
                     it.write(inputText)

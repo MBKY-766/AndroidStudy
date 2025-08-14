@@ -12,11 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name="FilePersistenceTest.MainActivity"-->
+<!--            android:name="SharedPreferenceTest.MainActivity"-->
 <!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name="BroadcastBestPractice.MainActivity"-->
-<!--            android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt;-->
+        <!-- <activity -->
+        <!-- android:name="FilePersistenceTest.MainActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name="BroadcastBestPractice.MainActivity" -->
+        <!-- android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name="BroadcastBestPractice.LoginActivity" -->
         <!-- android:exported="false" /> -->
         <!-- <receiver -->
@@ -75,7 +78,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="FilePersistenceTest.MainActivity"
+            android:name="SharedPreferenceTest.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
