@@ -11,22 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-        <receiver
-            android:name="BroadcastTest.receiver.AnotherBroadcastReveiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.broadcasttest.MY_BROADCAST" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="BroadcastTest.receiver.MyBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.broadcasttest.MY_BROADCAST" />
-            </intent-filter>
-        </receiver> <!-- <receiver -->
+        <activity
+            android:name="BroadcastBestPractice.MainActivity"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name="BroadcastBestPractice.LoginActivity"-->
+<!--            android:exported="false" />-->
+
+<!--        <receiver-->
+<!--            android:name="BroadcastTest.receiver.AnotherBroadcastReveiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.example.broadcasttest.MY_BROADCAST" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        <receiver-->
+<!--            android:name="BroadcastTest.receiver.MyBroadcastReceiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.example.broadcasttest.MY_BROADCAST" />-->
+<!--            </intent-filter>-->
+<!--        </receiver> &lt;!&ndash; <receiver &ndash;&gt;-->
         <!-- android:name="BroadcastTest.BootCompleteReceiver" -->
         <!-- android:enabled="true" -->
         <!-- android:exported="true"> -->
@@ -67,7 +74,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="BroadcastTest.BroadcastActivity"
+            android:name="BroadcastBestPractice.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
