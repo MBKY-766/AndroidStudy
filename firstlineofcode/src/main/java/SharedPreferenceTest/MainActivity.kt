@@ -1,6 +1,5 @@
 package SharedPreferenceTest
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             editor.apply()
         }
         restoreButton.setOnClickListener {
-            val prefs = getSharedPreferences("data", Context.MODE_PRIVATE)//第一个参数：文件名，第二个参数：访问模式 private：只有当前程序才能操作
+            val prefs = getSharedPreferences("data", MODE_PRIVATE)//第一个参数：文件名，第二个参数：访问模式 private：只有当前程序才能操作
             val name = prefs.getString("name", "")
             val age = prefs.getInt("age", 0)
             val married = prefs.getBoolean("married", false)
