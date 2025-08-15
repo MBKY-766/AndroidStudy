@@ -12,9 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-<!--        <activity-->
-<!--            android:name="ContactsTest.ContactsMain"-->
-<!--            android:exported="false" />-->
+        <provider
+            android:name="SQLiteDatabaseTest.DatabaseProvider"
+            android:authorities="SQLiteDatabaseTest.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+        <!-- <activity -->
+        <!-- android:name="ContactsTest.ContactsMain" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name="RuntimePermissionTest.RuntimePermissionMain" -->
         <!-- android:exported="false" /> -->
