@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name="SharedPreferenceTest.MainActivity"-->
+<!--            android:name="SQLiteDatabaseTest.SQLiteMainActivity"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name="SharedPreferenceTest.MainActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name="FilePersistenceTest.MainActivity" -->
         <!-- android:exported="false" /> -->
@@ -78,7 +81,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="BroadcastBestPractice.LoginActivity"
+            android:name="SQLiteDatabaseTest.SQLiteMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
