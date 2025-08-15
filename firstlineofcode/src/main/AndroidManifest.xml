@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name="SQLiteDatabaseTest.SQLiteMainActivity"-->
+<!--            android:name="RuntimePermissionTest.RuntimePermissionMain"-->
 <!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name="SQLiteDatabaseTest.SQLiteMainActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name="SharedPreferenceTest.MainActivity" -->
         <!-- android:exported="false" /> -->
@@ -81,7 +84,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="SQLiteDatabaseTest.SQLiteMainActivity"
+            android:name="RuntimePermissionTest.RuntimePermissionMain"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
