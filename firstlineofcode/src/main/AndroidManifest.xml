@@ -13,10 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-        <activity
-            android:name="NotificationTest.NotificationActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name="PlayAudioTest.PlayAudioMainActivity"-->
+<!--            android:exported="false" />-->
+
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="cameraalbumtest.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/file_paths" />-->
+<!--        </provider> &lt;!&ndash; <activity &ndash;&gt;-->
+        <!-- android:name="CameraAlbumTest.CameraMainActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
+        <!-- android:name="NotificationTest.NotificationActivity" -->
+        <!-- android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name="NotificationTest.NotificationTest" -->
         <!-- android:exported="false" /> -->
         <!-- <provider -->
@@ -99,7 +113,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="NotificationTest.NotificationTest"
+            android:name="PlayAudioTest.PlayAudioMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

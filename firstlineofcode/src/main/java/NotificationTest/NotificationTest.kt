@@ -22,18 +22,21 @@ class NotificationTest : AppCompatActivity() {
         //判断当前版本
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
-                "normal",
-                "Normal",
-                NotificationManager.IMPORTANCE_DEFAULT
+                "important",
+                "Important",
+                NotificationManager.IMPORTANCE_HIGH
             )
             manager.createNotificationChannel(channel)
         }
         sendNotice.setOnClickListener {
             val intent = Intent(this, NotificationActivity::class.java)
             val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
-            val notification = NotificationCompat.Builder(this, "normal")
+            val notification = NotificationCompat.Builder(this, "important")
                 .setContentTitle("This is content title")
-                .setContentText("This is content text")
+                .setStyle(NotificationCompat.BigTextStyle().bigText("66666666666666666666" +
+                        "66666666666666666666666" +
+                        "6666666wwdawdadadasdas" +
+                        "diashdiashdihasdsadhaskdhasidas"))//通知内容较长时，设置展示模式可以一次性显示
                 .setSmallIcon(R.drawable.edit_bg)
                 .setLargeIcon(
                     BitmapFactory.decodeResource(resources,
