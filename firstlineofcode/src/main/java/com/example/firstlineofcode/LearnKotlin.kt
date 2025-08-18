@@ -80,15 +80,24 @@ fun main() {
 //    println(largerNumber);
 
 }
+//利用范性改造build函数 --> 与apply函数功能相同 Unit:无返回值
+fun <T> T.build(block: T.() -> Unit): T {
+    block()
+    return this
+}
+/*fun StringBuilder.build(block: StringBuilder.() -> Unit): StringBuilder {
+    block()
+    return this
+}*/
 
 //.?:非空检查  类型？:该变量可为空(null) name:String? name可为空值
-fun doStudy(study: Study?) {
+/*fun doStudy(study: Study?) {
     //let:是个函数，可将原始调用对象作为参数传递到Lambda表达式中
     study?.let {
         it.readBooks()
         it.doHomeWork()
     }
-}
+}*/
 
 
 //循环语句
