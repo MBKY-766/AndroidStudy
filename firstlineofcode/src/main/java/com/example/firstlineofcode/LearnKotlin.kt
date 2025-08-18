@@ -1,7 +1,15 @@
 package com.example.firstlineofcode
 
 fun main() {
-    println("Hello Kotlin!")
+//    println("Hello Kotlin!")
+    if ("Hello kitty".startsWith("Hello")) {
+        //处理具体的逻辑
+        println("sure")
+    }
+    if ("Hello Kotlin" beginsWith "Hello") {
+        // 处理具体的逻辑
+        println("yes yes!")
+    }
     //面向对象编程
     //apply函数-无法指定返回值，返回调用者本身
     /*val result = StringBuilder().apply{
@@ -80,11 +88,14 @@ fun main() {
 //    println(largerNumber);
 
 }
+
+//infix函数
+infix fun String.beginsWith(prefix: String) = startsWith(prefix)
 //利用范性改造build函数 --> 与apply函数功能相同 Unit:无返回值
-fun <T> T.build(block: T.() -> Unit): T {
-    block()
-    return this
-}
+//fun <T> T.build(block: T.() -> Unit): T {
+//    block()
+//    return this
+//}
 /*fun StringBuilder.build(block: StringBuilder.() -> Unit): StringBuilder {
     block()
     return this
