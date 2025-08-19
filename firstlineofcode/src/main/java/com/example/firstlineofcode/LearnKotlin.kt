@@ -1,101 +1,34 @@
 package com.example.firstlineofcode
 
 fun main() {
-//    println("Hello Kotlin!")
-//    if ("Hello kitty".startsWith("Hello")) {
-//        //处理具体的逻辑
-//        println("sure")
-//    }
-//    if ("Hello Kotlin" beginsWith "Hello") {
-//        // 处理具体的逻辑
-//        println("yes yes!")
-//    }
-    val result1 = getGenericType<String>()
-    val result2 = getGenericType<Int>()
-    println("result1 is $result1")
-    println("result2 is $result2")
-    //面向对象编程
-    //apply函数-无法指定返回值，返回调用者本身
-    /*val result = StringBuilder().apply{
-        append("start with eating \n")
-        append("eat banana\n")
-        append("eat apple")
-    }
-    println(result.toString())*/
-    //run函数-和with相似，只不过不能直接调用，要在，某个对象的基础上调用
 
-    /*val result = StringBuilder().run{
-        append("start with eating \n")
-        append("eat banana\n")
-        append("eat apple")
-        toString()
-    }
-    println(result)*/
-    //with函数
-    /*val result = with(StringBuilder()){
-        append("start with eating \n")
-        append("eat banana\n")
-        append("eat apple")
-        toString()
-    }
-    println(result)*/
-
-    //let
-//    val stu = Student("2222", 2, "tom", 14)
-//    doStudy(stu)
-//    Thread { println("Thread is running.") }.start()
-
-//    val list = mutableListOf("Apple", "Banana", "Orange", "Pear", "Grape")
-    //lambda表达式简化
-    /*val maxLengthFruit = list.maxBy { it.length }
-    println(maxLengthFruit)*/
-    /*
-    val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape", "Watermelon")
-    val lambda = { fruit: String -> fruit.length }
-    val maxLengthFruit = list.maxBy(lambda)
-    */
-    //map集合
-    /*val map = mutableMapOf("Apple" to 1, "Banana" to 2, "Orange" to 3)
-    for ((fruit, id) in map) {
-        println("名称：$fruit, 序号：$id")
-    }*/
-    //可变集合
-    /*val set = mutableSetOf("Apple", "Banana", "Orange", "Pear", "Grape")
-    val list = mutableListOf("Apple", "Banana", "Orange", "Pear", "Grape")
-    list.add("watermelon")
-    for (fruit in list) {
-        println(fruit)
-    }*/
-    //不可变集合
-    /*val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")
-    for(i in list){
-        println(i)
-    }*/
-//    Singleton.singletonTest()
-//    val cellphone = Cellphone("iPhone", 8999.0)
-//    println(cellphone)
-//    val p = Person()
-//    p.name = "bgb"
-//    p.age = 20
-//    p.eat()
-//    val s = Student("2022",2,"jack",20);
-//    println(s.toString())
-//    doStudy(s)
-//    println(s.toString())
-//    cycle()
-    //var val
-//    println(getScore("tom"))
-//   主动声明变量类型： var a: Int = 10
-//    a *= 10
-//    print(a)
-//    val largerNumber = largerNumber(3, 5)
-//    println(largerNumber);
-
+//    val student = Student("Tom", 19)
+//    val data = SimpleData<Student>(student)
+//    handleMyData(data)
+//    val studentData = data.get()
 }
-//范型实化
-inline fun <reified T> getGenericType() = T::class.java
-//infix函数
-infix fun String.beginsWith(prefix: String) = startsWith(prefix)
+//范型逆变-MyClass<Person>是MyClass<Student>的子类 in：只能出现在参数位置
+//interface Transformer<in T> {
+//    fun transform(t: T): String
+//}
+//范型协变——MyClass<Student>是MyClass<Person>的子类 out：只能出现在返回值位置
+//class SimpleData<out T>(val data: T?) {
+//    fun get(): T? {
+//        return data }
+//}
+//fun handleMyData(data: SimpleData<Person>) {
+//    val personData = data.get()
+//}
+//利用范性实化简化Intent启动
+//inline fun <reified T> startService(context: Context){
+//    val intent = Intent(context,T::class.java)
+//    context.startService(intent)
+//}
+
+////范型实化
+//inline fun <reified T> getGenericType() = T::class.java
+////infix函数
+//infix fun String.beginsWith(prefix: String) = startsWith(prefix)
 //利用范性改造build函数 --> 与apply函数功能相同 Unit:无返回值
 //fun <T> T.build(block: T.() -> Unit): T {
 //    block()
