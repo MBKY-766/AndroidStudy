@@ -14,8 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
 <!--        <activity-->
-<!--            android:name="PlayVideoTest.PlayVideoMainActivity"-->
+<!--            android:name="MyServiceTest.ServiceMainActivity"-->
 <!--            android:exported="false" />-->
+
+        <service
+            android:name="MyServiceTest.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+<!--        <activity-->
+<!--            android:name="MyThreadTest.ThreadMainActivity"-->
+<!--            android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt;-->
+        <!-- android:name="PlayVideoTest.PlayVideoMainActivity" -->
+        <!-- android:exported="false" /> -->
         <!-- <activity -->
         <!-- android:name="PlayAudioTest.PlayAudioMainActivity" -->
         <!-- android:exported="false" /> -->
@@ -115,7 +126,7 @@
         <!-- android:name=".FirstKotlinActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name="PlayVideoTest.PlayVideoMainActivity"
+            android:name="MyServiceTest.ServiceMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
