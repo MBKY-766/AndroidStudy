@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,18 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudy">
-<!--        <activity-->
+        <activity
+            android:name="NetWorkTest.NetWorkMainActivity"
+            android:exported="false" />
+        <!-- <activity -->
         <!-- <activity -->
         <!-- android:name="MyServiceTest.ServiceMainActivity" -->
         <!-- android:exported="false" /> -->
-<!--        <service-->
-<!--            android:name="MyServiceTest.MyIntentService"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true" />-->
-<!--        <service-->
-<!--            android:name="MyServiceTest.MyService"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true" /> &lt;!&ndash; <activity &ndash;&gt;-->
+        <!-- <service -->
+        <!-- android:name="MyServiceTest.MyIntentService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" /> -->
+        <!-- <service -->
+        <!-- android:name="MyServiceTest.MyService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name="MyThreadTest.ThreadMainActivity" -->
         <!-- android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name="PlayVideoTest.PlayVideoMainActivity" -->
