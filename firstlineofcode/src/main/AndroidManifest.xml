@@ -17,6 +17,10 @@
 <!--        <activity-->
 <!--            android:name="MyServiceTest.ServiceMainActivity"-->
 <!--            android:exported="false" />-->
+        <service
+            android:name="MyServiceTest.MyIntentService"
+            android:enabled="true"
+            android:exported="true"/>
 
         <service
             android:name="MyServiceTest.MyService"

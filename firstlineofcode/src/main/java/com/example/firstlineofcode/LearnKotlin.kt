@@ -2,14 +2,18 @@ package com.example.firstlineofcode
 
 fun main() {
 //    println("Hello Kotlin!")
-    if ("Hello kitty".startsWith("Hello")) {
-        //处理具体的逻辑
-        println("sure")
-    }
-    if ("Hello Kotlin" beginsWith "Hello") {
-        // 处理具体的逻辑
-        println("yes yes!")
-    }
+//    if ("Hello kitty".startsWith("Hello")) {
+//        //处理具体的逻辑
+//        println("sure")
+//    }
+//    if ("Hello Kotlin" beginsWith "Hello") {
+//        // 处理具体的逻辑
+//        println("yes yes!")
+//    }
+    val result1 = getGenericType<String>()
+    val result2 = getGenericType<Int>()
+    println("result1 is $result1")
+    println("result2 is $result2")
     //面向对象编程
     //apply函数-无法指定返回值，返回调用者本身
     /*val result = StringBuilder().apply{
@@ -88,7 +92,8 @@ fun main() {
 //    println(largerNumber);
 
 }
-
+//范型实化
+inline fun <reified T> getGenericType() = T::class.java
 //infix函数
 infix fun String.beginsWith(prefix: String) = startsWith(prefix)
 //利用范性改造build函数 --> 与apply函数功能相同 Unit:无返回值
